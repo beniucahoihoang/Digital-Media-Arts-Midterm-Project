@@ -1,18 +1,33 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #000;
-    color: white;
+    background-color: #000; /* Màu nền đen */
+    overflow: hidden; /* Ngăn cuộn trang */
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 }
-button {
-    padding: 15px;
-    font-size: 20px;
+
+/* Định dạng emoji */
+.emoji {
+    position: absolute;
+    font-size: 40px;
     cursor: pointer;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    user-select: none;
+    top: -10vh; /* Bắt đầu từ trên màn hình */
+    animation: fall linear infinite;
 }
-button:hover {
-    background-color: darkred;
+
+/* Tạo hiệu ứng emoji rơi */
+@keyframes fall {
+    from {
+        transform: translateY(-10vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
 }
+
+/* Hover vào emoji sáng hơn */
+.emoji:hover {
+    filter: brightness(1.5);
